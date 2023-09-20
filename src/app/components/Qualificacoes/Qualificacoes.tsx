@@ -36,6 +36,18 @@ const Box = styled.div`
   gap: 100px;
   width: 60%;
   flex-wrap: wrap;
+  @media(max-width: 750px){
+    gap: 30px;
+    
+  }
+  @media(max-width: 520px){
+    gap: 20px;
+    font-size: 4rem;
+  }
+  @media(max-width: 410px){
+    gap: 10px;
+    font-size: 3rem;
+  }
 `;
 
 

@@ -1,19 +1,8 @@
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Placeholder from 'react-bootstrap/Placeholder';
-import { AiFillHtml5, AiFillGithub } from "react-icons/ai"
-import { BiLogoReact, BiLogoJava, BiLogoFigma } from "react-icons/bi"
-import { RiJavascriptFill } from "react-icons/ri"
-import { IoLogoPython } from "react-icons/io"
-import { SiMysql, SiApachecassandra, SiNeo4J, SiStyledcomponents } from "react-icons/si"
-import { BiLogoMongodb, BiLogoRedux } from "react-icons/bi"
-import { DiCss3, DiRedis } from "react-icons/di"
-import { FaDocker, FaNodeJs } from "react-icons/fa"
-import { GrOracle } from "react-icons/gr"
-import { BsGit } from "react-icons/bs"
+import { AiFillGithub } from 'react-icons/ai';
 import styled from 'styled-components';
-import { ReactNode } from 'react';
-
 
 const Field = styled.div`
   display: flex;
@@ -24,7 +13,21 @@ const Field = styled.div`
   gap: 10px;
 `;
 
-
+const Container = styled.div`
+  width: 500px;
+  @media(max-width: 1120px){
+    width: auto;
+  }
+  @media(max-width: 490px){
+    width: 450px;
+  }
+  @media(max-width: 470px){
+    width: 400px;
+  }
+  @media(max-width: 400px){
+    width: 350px;
+  }
+`;
 
 interface CardProps {
   link?: string;
@@ -42,56 +45,49 @@ const Cards: React.FC<CardProps> = ({ link, text, title, type, tecnologias }) =>
   };
 
   return (
-      <div className="d-flex justify-content-around">
-        <Card style={{ 
-          width: '30rem',
-          background: '#2D2D2D',
-          color: 'white',
-          border: '1px solid white',
+    <Container>
+      <Card style={{
+        background: '#2D2D2D',
+        color: 'white',
+        border: '1px solid white',
+        margin: '20px',
+      }}>
+        <Card.Body style={{
+          display: 'flex',
+          justifyContent: 'center',
+          flexDirection: 'column',
+          gap: '20px',
         }}>
-          {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-          <Card.Body style={{ 
-            margin: '20px', 
-            display: 'flex',
-            justifyContent: 'center',
-            flexDirection: 'column',
-            gap: '20px',
-          }}>
-            <Card.Title>{title}</Card.Title>
-            {text && (
-              <Card.Text>
-                {text.split('\n').map((line, index) => (
-                  <p key={index}>{line}</p>
-                ))}
-              </Card.Text>
-            )}
-            {/* <Card.Text>
+          <Card.Title>{title}</Card.Title>
+          {text && (
+            <Card.Text>
               {text.split('\n').map((line, index) => (
                 <p key={index}>{line}</p>
               ))}
-            </Card.Text> */}
-            <Field>
-              {tecnologias}
-            </Field>
-            <Button 
-              variant="primary" 
-              onClick={() => redirecionarParaSiteExterno(link)}
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: '10px'
-              }}> 
-              {type === "projeto" ? (
-                <>
-                  <AiFillGithub/>
-                  "Repositorio"
-                </>
-              ) : "Empresa"}
-            </Button>
-          </Card.Body>
-        </Card>
-      </div>
+            </Card.Text>
+          )}
+          <Field>
+            {tecnologias}
+          </Field>
+          <Button
+            variant="primary"
+            onClick={() => redirecionarParaSiteExterno(link)}
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '10px'
+            }}>
+            {type === "projeto" ? (
+              <>
+                <AiFillGithub />
+                "Repositório"
+              </>
+            ) : "Empresa"}
+          </Button>
+        </Card.Body>
+      </Card>
+    </Container>
   );
 }
 

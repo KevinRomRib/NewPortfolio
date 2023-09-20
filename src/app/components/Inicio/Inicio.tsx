@@ -24,7 +24,7 @@ const Title = styled.p`
     color: white;
     font-size: 3.5vw;
     @media(max-width: 1100px){
-      height: 50px;
+      display: none;
     }
 `;
 

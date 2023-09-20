@@ -39,6 +39,7 @@ const Box = styled.div<{
   justify-content: center;
   align-items: center;
   flex-direction: ${(props) => props?.flexDirection};
+  flex-wrap: wrap;
   gap: ${(props) => props?.gap};
   padding-top: ${(props) => props?.paddingTop};
   font-size: 50px;
