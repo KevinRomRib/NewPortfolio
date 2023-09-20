@@ -31,7 +31,7 @@ interface CardProps {
   text?: string;
   title?: string;
   type?: string;
-  tecnologias?: ReactNode
+  tecnologias?: React.ReactNode;
 }
 
 const Cards: React.FC<CardProps> = ({ link, text, title, type, tecnologias }) => {
@@ -58,11 +58,18 @@ const Cards: React.FC<CardProps> = ({ link, text, title, type, tecnologias }) =>
             gap: '20px',
           }}>
             <Card.Title>{title}</Card.Title>
-            <Card.Text>
+            {text && (
+              <Card.Text>
+                {text.split('\n').map((line, index) => (
+                  <p key={index}>{line}</p>
+                ))}
+              </Card.Text>
+            )}
+            {/* <Card.Text>
               {text.split('\n').map((line, index) => (
                 <p key={index}>{line}</p>
               ))}
-            </Card.Text>
+            </Card.Text> */}
             <Field>
               {tecnologias}
             </Field>
