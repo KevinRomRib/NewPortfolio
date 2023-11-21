@@ -13,6 +13,8 @@ import Spinner from "./components/Spinner/Spinner"
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 
+import { hotjar } from "react-hotjar"
+
 
 const App = () => {
 
@@ -24,6 +26,10 @@ const App = () => {
     setTimeout(() => {
       setLoading(false);
     }, 1000);
+  }, []);
+
+  useEffect(() => {
+    hotjar.initialize(3745008, 6)
   }, []);
 
   return (
