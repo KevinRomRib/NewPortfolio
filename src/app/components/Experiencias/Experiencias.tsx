@@ -68,6 +68,7 @@ const Experiencias: React.FC = () => {
           <h1>Experiencias Profissionais</h1>
           <Box>  
             <Cards 
+                empName='MidAll'
                 type='experiencia'
                 link="https://midall.com.br/" 
                 title='Estágio em Desenvolvimento Front-End'

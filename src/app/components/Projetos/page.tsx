@@ -66,6 +66,8 @@ const Projetos: React.FC = () => {
                 text={item.text} 
                 type='projeto'
                 tecnologias={item.tecnologias}
+                id={item.id}
+                summary={item.summary}
                 key={index}
               />
             ))}

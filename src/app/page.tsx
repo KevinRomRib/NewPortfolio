@@ -11,6 +11,7 @@ import Experiencias from "./components/Experiencias/Experiencias"
 import Contatos from "./components/Contatos/Contatos"
 import Spinner from "./components/Spinner/Spinner"
 import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux';
 
 
 const App = () => {
@@ -41,6 +42,7 @@ const App = () => {
           <Qualificacoes />
           <Experiencias />
           <Contatos />
+          
         </>
       )}
     </>
