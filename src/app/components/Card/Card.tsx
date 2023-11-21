@@ -60,7 +60,7 @@ const Cards: React.FC<CardProps> = ({ link, text, title, type, tecnologias, empN
   const handleCloseModal = () => {
     setShowModal(false);
   };
-
+  
   return (
     <Container>
       <Card
@@ -70,7 +70,7 @@ const Cards: React.FC<CardProps> = ({ link, text, title, type, tecnologias, empN
           border: '1px solid white',
           margin: '20px',
         }}
-      >
+        >
         <Card.Body
           style={{
             display: 'flex',
@@ -78,7 +78,8 @@ const Cards: React.FC<CardProps> = ({ link, text, title, type, tecnologias, empN
             flexDirection: 'column',
             gap: '20px',
           }}
-        >
+          >
+          {type !== 'projeto' && <h4>{empName}</h4>}
           <Card.Title>{title}</Card.Title>
           {text && (
             <Card.Text>
